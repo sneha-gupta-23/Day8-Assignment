@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sum of Positive Numbers</title></head>
+<body>
+  <button onclick="sumPositive()">Sum Positive Numbers</button>
+  <script>
+    function sumPositive() {
+      let numbers = [-2, 5, 3, -1, 7, -3];
+      let sum = 0;
+      for (let num of numbers) {
+        if (num > 0) sum += num;
+      }
+      console.log("Sum of positive numbers:", sum);
+    }
+  </script>
+</body>
+</html>

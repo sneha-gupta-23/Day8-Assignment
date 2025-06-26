@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><title>Library System</title></head>
+<body>
+  <button onclick="librarySystem()">Run Library System</button>
+  <script>
+    function librarySystem() {
+      let library = [
+        { title: "Book A", author: "Author 1", year: 2001, available: true },
+        { title: "Book B", author: "Author 2", year: 2005, available: false }
+      ];
+
+      function displayAvailableBooks() {
+        console.log("Available Books:");
+        for (let book of library) {
+          if (book.available) {
+            console.log(`${book.title} by ${book.author}`);
+          }
+        }
+      }
+
+      function borrowBook(title) {
+        for (let book of library) {
+          if (book.title === title && book.available) {
+            book.available = false;
+            console.log(`${title} has been borrowed.`);
+            return;
+          }
+        }
+        console.log("Book not available or not found.");
+      }
+
+      function addBook(title, author, year) {
+        library.push({ title, author, year, available: true });
+        console.log(`${title} added to library.`);
+      }
+
+      displayAvailableBooks();
+      borrowBook("Book A");
+      addBook("Book C", "Author 3", 2020);
+    }
+  </script>
+</body>
+</html>
